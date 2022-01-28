@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+## Here  value that assign as fine value for diskusage
+
+Threshold=10
+
+PART=/boot
+
+## Here we are checking disk usage of boot partition
+DiskUsage=`df -h |grep $PART | awk '{ print $5 }' | cut -d'%' -f1` 
+
+## condition that if diskuage is greater than threshold value
+##  print disk usage is rising up
+if [ $DiskUsage -gt $Threshold ]; then
+  echo "Disk Usage is rising Up "
+  echo "Current Disk Usage is: $DiskUsage"
+fi
+

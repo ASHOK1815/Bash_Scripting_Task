@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+echo "____________Listing all the TCP connections_______________"
+echo " "
+
+
+## here ss command is acts a tool
+## to displays network socket related information
+
+ss -t
+
+
+
+echo =" "
+echo "____________Listing all Listening TCP connections_______________"
+
+ss -lt  ## command to list all listening TCP connections
+
+
+

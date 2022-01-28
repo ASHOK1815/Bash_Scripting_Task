@@ -1,0 +1,34 @@
+#!/bin/bash
+
+
+## DECLARING THE ARRAY
+# declare -a arr=('MY' 'NAME' 'IS' 'ASHOK' 'KUMAWAT' 'AB+')
+declare -a arr=('This' 'is' 'easy' 'one')
+
+## TAKING THE LENGTH OF THE ARRAY
+len=${#arr[@]}
+
+
+## USING TWO FOR LOOP TO COMPARE THE ARRAY ELEMENTS
+for (( i=0;i<$len;i++ ))
+do
+    for(( j=$((i+1)) ;j<$len ;j++ ))
+    do 
+       if [[ "${arr[i]}" > "${arr[j]}" ]] ## COMPARING USING ASCII ALPHABETICAL ORDER
+       then
+           temp=${arr[i]}
+           arr[i]=${arr[j]}
+           arr[j]=$temp
+       fi
+
+    done
+
+done
+
+
+
+echo "Sorted array is:  ${arr[@]}"
+## PRINTING THE SORTED ARRAY
+
+
+

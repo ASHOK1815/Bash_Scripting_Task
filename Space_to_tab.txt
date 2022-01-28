@@ -1,0 +1,27 @@
+#!/bin/sh
+
+## sed command actually acts as stream editor
+## function perfomed by it
+## 1. insertion
+## 2. deletion
+## 3. replacement
+## 4. search and replace
+
+# The substitute flag /g (global replacement) specifies the sed command to replace all the occurrences of the string in the line.
+
+str="Hello World"
+echo "Actual String: $str"
+echo
+
+echo "remove spaces from a string"
+echo $str | sed 's/ //g'
+echo 
+
+echo "Adding tab in place of spaces"
+echo $str | sed 's/ /   /g'
+
+echo
+echo "Adding word in place of spaces"
+echo $str | sed 's/ /bye/g'
+
+

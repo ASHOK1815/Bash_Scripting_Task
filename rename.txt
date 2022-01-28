@@ -1,0 +1,25 @@
+#!/bin/bash
+
+## dt variable have currentdate+currenttime
+dt=$(date '+%d_%m_%Y_%H:%M:%S');
+
+
+# Take the original filename
+read -p "Enter the original filename to rename:" filename
+
+# extension="${original##*.}"
+
+# newname="$dt.$extension"
+
+
+
+# Check the original file exists or not
+if [ -f $filename ]
+then
+    echo "File exists"
+     # Rename the file
+     $(mv $filename $dt)
+     echo "The file is renamed."
+else
+   echo "File not found !"
+fi
