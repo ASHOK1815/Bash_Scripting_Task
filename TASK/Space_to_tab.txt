@@ -9,8 +9,10 @@
 
 # The substitute flag /g (global replacement) specifies the sed command to replace all the occurrences of the string in the line.
 
-str="Hello World"
-echo "Actual String: $str"
+echo "Enter the string"
+read str
+
+echo "Actual String enter by user: $str"
 echo
 
 echo "remove spaces from a string"
@@ -23,5 +25,6 @@ echo $str | sed 's/ /   /g'
 echo
 echo "Adding word in place of spaces"
 echo $str | sed 's/ /bye/g'
+
 
 
